@@ -11,11 +11,11 @@ class PeopleController < ApplicationController
 
     def json_attributes
       {
-        only: [:doc_number, :doc_type],
+        only: [:doc_number, :doc_type, :email],
         methods: [:full_name],
         include: {
           tasks: {
-            only: [:name, :priority],
+            only: [:name, :priority, :duration],
           }
         },
       }
