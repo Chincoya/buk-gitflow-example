@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
 
     def json_attributes
       {
-        only: [:doc_number, :doc_type, :email],
+        only: [:doc_number, :doc_type, :email, :nickname],
         methods: [:full_name],
         include: {
           tasks: {
