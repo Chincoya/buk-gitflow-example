@@ -19,3 +19,31 @@ Person.create([
     doc_type: 'CURP'
   },
 ])
+
+Task.create([
+  {
+    name: 'Plumbing',
+    priority: 2,
+    person_id: 1,
+  },
+  {
+    name: 'Plumbing',
+    priority: 1,
+    person_id: 2,
+  },
+  {
+    name: 'Stomping turtles',
+    priority: 1,
+    person_id: 1,
+  },
+  {
+    name: 'Stomping turtles',
+    priority: 2,
+    person_id: 2,
+  },
+  {
+    name: 'Ruling',
+    priority: 100,
+    person_id: 3,
+  },
+])

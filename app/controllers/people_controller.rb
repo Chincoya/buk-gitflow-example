@@ -1,10 +1,10 @@
 class PeopleController < ApplicationController
   def index
-    render json: Person.all.to_json(**json_attributes)
+    render json: Person.all.as_json(**json_attributes)
   end
 
   def show
-    render json: Person.find(params[:id]).to_json(**json_attributes)
+    render json: Person.find(params[:id]).as_json(**json_attributes)
   end
 
   private
@@ -13,6 +13,11 @@ class PeopleController < ApplicationController
       {
         only: [:doc_number, :doc_type],
         methods: [:full_name],
+        include: {
+          tasks: {
+            only: [:name, :priority],
+          }
+        },
       }
     end
 end
