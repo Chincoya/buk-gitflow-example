@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
         methods: [:full_name],
         include: {
           tasks: {
-            only: [:name, :priority],
+            only: [:name, :priority, :duration],
           }
         },
       }
